@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFusion</title>
+
+
+   <link rel="stylesheet" href="css/style.css">
+   <script src="js/main.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+</head>
+
+<body>
+
+    <!-- LOGIN CHECK -->
+
+    <script>
+
+    if(localStorage.getItem("loggedIn") !== "true"){
+        window.location.href = "login.html";
+    }
+
+    </script>
+
+
+
+   <!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <input type="text" placeholder="Search products..." class="search-bar">
+
+    <div class="logo-section">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h1 class="logo-title">ShopFusion</h1>
+    </div>
+
+    <div class="nav-icons">
+
+        <button onclick="logout()" class="logout-btn">
+            Logout
+        </button>
+
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    </div>
+
+</nav>
+
+    <!-- SALE BANNER -->
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <h1>MEGA SALE 50% OFF</h1>
+
+            <p>Best Deals on Shoes, Watches & Electronics</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+    <h2>Categories</h2>
+
+    <div class="category-container">
+
+        <div class="category-card" onclick="openCategory('Shoes')">
+
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+
+            <h3>Shoes</h3>
+
+        </div>
+
+        <div class="category-card" onclick="openCategory('Watches')">
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
+
+            <h3>Watches</h3>
+
+        </div>
+
+        <div class="category-card" onclick="openCategory('Mobiles')">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+            <h3>Mobiles</h3>
+
+        </div>
+
+        <div class="category-card" onclick="openCategory('Laptops')">
+        
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500">
+        
+            <h3>Laptops</h3>
+        
+        </div>
+
+        <div class="category-card" onclick="openCategory('Books')">
+    
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500">
+    
+            <h3>Books</h3>
+
+        </div>
+
+
+        <div class="category-card" onclick="openCategory('Beauty')">
+
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500">
+
+            <h3>Beauty</h3>
+
+        </div>
+
+        <div class="category-card" onclick="openCategory('Fashion')">
+
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8">
+
+            <h3>Fashion</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+
+        <h2>Featured Products</h2>
+
+        <div class="product-container" id="productContainer">
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/main.js"></script>
+
+    <script>
+
+    function logout(){
+
+        localStorage.removeItem("loggedIn");
+
+        window.location.href = "login.html";
+    }
+
+    </script>
+
+</body>
+</html>
